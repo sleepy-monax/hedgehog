@@ -36,7 +36,7 @@ namespace Hedgehog.Graphic
         public static Mesh LoadFromObjFile(string filePath)
         {
 
-            OrderedDictionary<int, Vertex> vertex = new Dictionary<int, Hedgehog.Vertex>();
+            Vertex[] vertex = null;
 
             List<Position3D> position = new List<Position3D>(); 
             List<Vector3D> normal     = new List<Vector3D>();
@@ -76,18 +76,20 @@ namespace Hedgehog.Graphic
                             for (int i = 0; i < 3; i++)
                             {
                                 int[] indices = lineData[1 + i].Split('/').ToInts();
-
-                                var newVertex = new Vertex(position[indices[0] - 1],
-                                                      normal[indices[2] - 1],
-                                                      texture[indices[1] - 1]
-                                                      );
-                                if (!vertex.ContainsKey(indices[0] - 1))
+                                
+                                if (vertex is null)
                                 {
-                                    vertex.Add(indices[0] - 1, new Vertex(position[indices[0] - 1],
-                                                      normal[indices[2] - 1],
-                                                      texture[indices[1] - 1]
-                                                      ));
-
+                                    vertex = new Vertex[position.Count];
+                                }
+                                else
+                                {
+                                    if (vertex[indices[0] - 1] == null)
+                                    {
+                                        vertex[indices[0] - 1] = new Vertex(position[indices[0] - 1],
+                                                                            normal[indices[2] - 1],
+                                                                            texture[indices[1] - 1]
+                                                                            );
+                                    }
                                 }
 
                                 vertexIndex.Add(indices[0] - 1);
@@ -100,7 +102,7 @@ namespace Hedgehog.Graphic
                 }
             }
 
-            return new Mesh(vertex.Values.ToArray(), vertexIndex.ToArray());
+            return new Mesh(vertex, vertexIndex.ToArray());
         }
     }
 }
