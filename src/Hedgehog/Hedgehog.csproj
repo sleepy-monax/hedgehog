@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE85D659-A184-4688-A164-7A3533F2280E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hedgehog</RootNamespace>
+    <AssemblyName>Hedgehog</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.0.0-pre\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Array.cs" />
+    <Compile Include="Color3.cs" />
+    <Compile Include="Color4.cs" />
+    <Compile Include="Convert.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Graphic\Camera.cs" />
+    <Compile Include="Graphic\Light.cs" />
+    <Compile Include="Graphic\Material.cs" />
+    <Compile Include="Graphic\Mesh.cs" />
+    <Compile Include="Graphic\OpenGL\FrameBuffer.cs" />
+    <Compile Include="Graphic\OpenGL\Shader.cs" />
+    <Compile Include="Graphic\OpenGL\ShaderProgram.cs" />
+    <Compile Include="Graphic\OpenGL\VertexArray.cs" />
+    <Compile Include="Graphic\RenderBatch.cs" />
+    <Compile Include="Graphic\Texture2D.cs" />
+    <Compile Include="Position2D.cs" />
+    <Compile Include="Transform3D.cs" />
+    <Compile Include="Vector3D.cs" />
+    <Compile Include="Vertex.cs" />
+    <Compile Include="Position3D.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rotation3D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Input\" />
+    <Folder Include="Sound\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Graphic\DirectX\ToDo" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
