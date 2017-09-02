@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System;
 
 namespace Hedgehog.Graphic
 {
@@ -16,9 +17,17 @@ namespace Hedgehog.Graphic
             Vertex = vertex;
             VertexIndex = vertexIndex;
             VertexArray = new VertexArray();
+            ReloadVertexArray();
         }
 
-        public void Load() { 
+        public void Destroy()
+        {
+            VertexArray.Destroy();
+            Vertex = null;
+            VertexIndex = null;
+        }
+
+        public void ReloadVertexArray() {
             VertexArray.StoreVertex(Vertex, VertexIndex);
         }
 
@@ -33,7 +42,7 @@ namespace Hedgehog.Graphic
               
         }
 
-        public static Mesh LoadFromObjFile(string filePath)
+        public static Mesh CreateFromObjFile(string filePath)
         {
 
             Vertex[] vertex = null;

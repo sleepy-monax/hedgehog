@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Globalization;
+using OpenTK;
 
 namespace Hedgehog
 {
@@ -8,6 +9,20 @@ namespace Hedgehog
     /// </summary>
     public static class Convert
     {
+        public static Matrix4 ToMatrix(this Transform3D t)
+        {
+            return Matrix4.Identity * Matrix4.CreateScale(t.Scale) * t.Rotation.ToMatrix() * t.Position.ToMatrix(); 
+        }
+
+        public static Matrix4 ToMatrix(this Rotation3D r)
+        {
+            return Matrix4.CreateRotationX(r.X) * Matrix4.CreateRotationX(r.Y) * Matrix4.CreateRotationX(r.Z);
+        }
+
+        public static Matrix4 ToMatrix(this Position3D p)
+        {
+            return Matrix4.CreateTranslation(p.X, p.Y, p.Z);
+        }
 
         public static Color ToSystemColor(this Color3 c)
         {

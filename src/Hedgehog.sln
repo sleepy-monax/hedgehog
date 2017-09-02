@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hedgehog", "Hedgehog\Hedgeh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hedgehog.Sample", "Hedgehog.Sample\Hedgehog.Sample.csproj", "{09E493C0-E49C-4FB5-9D5E-0B4814FDE767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hedgehog.Json", "Hedgehog.Json\Hedgehog.Json.csproj", "{60764505-B2A5-4F79-AC90-9DE6E3B94EFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{09E493C0-E49C-4FB5-9D5E-0B4814FDE767}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09E493C0-E49C-4FB5-9D5E-0B4814FDE767}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09E493C0-E49C-4FB5-9D5E-0B4814FDE767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60764505-B2A5-4F79-AC90-9DE6E3B94EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60764505-B2A5-4F79-AC90-9DE6E3B94EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60764505-B2A5-4F79-AC90-9DE6E3B94EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60764505-B2A5-4F79-AC90-9DE6E3B94EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

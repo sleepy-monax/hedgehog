@@ -6,7 +6,7 @@ namespace Hedgehog.Graphic
     public class RenderBatch
     {
 
-        Dictionary<Material, Dictionary<Mesh, Transform3D>> batch;
+        Dictionary<DiffuseMaterial, Dictionary<Mesh, Transform3D>> batch;
 
         public RenderBatch(Game game)
         {
@@ -17,7 +17,7 @@ namespace Hedgehog.Graphic
         {
         }
 
-        public void Draw(Transform3D transform, Mesh mesh, Material material)
+        public void Draw(Transform3D transform, Mesh mesh, DiffuseMaterial material)
         {
         }
 

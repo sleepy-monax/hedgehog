@@ -55,6 +55,10 @@
     <None Include="Assets\Shaders\test.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hedgehog.Json\Hedgehog.Json.csproj">
+      <Project>{60764505-b2a5-4f79-ac90-9de6e3b94eff}</Project>
+      <Name>Hedgehog.Json</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hedgehog\Hedgehog.csproj">
       <Project>{ee85d659-a184-4688-a164-7a3533f2280e}</Project>
       <Name>Hedgehog</Name>

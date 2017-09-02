@@ -55,9 +55,9 @@ namespace Hedgehog.Graphic.OpenGL
             int offset = 0;
             foreach (var v in vertex)
             {
-                positionData.Insert(v.Position.ToArray(), offset * 3);
-                normalData.Insert(v.Normal.ToArray(), offset * 3);
-                textureData.Insert(v.Texture.ToArray(), offset * 2);
+                positionData.Insert(v.V.ToArray(), offset * 3);
+                normalData.Insert(v.Vn.ToArray(), offset * 3);
+                textureData.Insert(v.Uv.ToArray(), offset * 2);
 
                 offset += 1;
             }

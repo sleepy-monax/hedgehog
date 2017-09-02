@@ -1,5 +1,7 @@
 ﻿using Hedgehog.Graphic;
 using Hedgehog.Graphic.OpenGL;
+using Hedgehog.Json;
+using System.IO;
 
 namespace Hedgehog.Sample
 {
@@ -12,13 +14,14 @@ namespace Hedgehog.Sample
         public override void Load()
         {
             renderBatch = new RenderBatch(this);
-            bunnyMesh = Mesh.LoadFromObjFile("./Assets/Bunny.obj");
-            bunnyMesh.Load();
+            bunnyMesh = Mesh.CreateFromObjFile("./Assets/Bunny.obj");
+            bunnyMesh.ReloadVertexArray();
+            File.WriteAllText("test.json", bunnyMesh.Vertex.ToJson());
         }
 
         public override void Destroy()
         {
-
+            bunnyMesh.Destroy();
         }
 
         public override void Draw()

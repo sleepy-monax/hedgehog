@@ -2,16 +2,16 @@
 
 namespace Hedgehog.Graphic
 {
-    public class Material
+    public class DiffuseMaterial : IMaterial
     {
-        public ShaderProgram ShaderProgram { get; private set; }
+        ShaderProgram shaderProgram;
 
-        public Material(ShaderProgram shaderProgram)
+        public DiffuseMaterial(ShaderProgram shaderProgram)
         {
 
         }
 
-        public static Material LoadFromFile(string filePath)
+        public static DiffuseMaterial LoadFromFile(string filePath)
         {
             return null;
         }
