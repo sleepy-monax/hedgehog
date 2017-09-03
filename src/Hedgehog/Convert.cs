@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Globalization;
 using OpenTK;
+using Hedgehog.Graphic;
 
 namespace Hedgehog
 {
@@ -22,6 +23,16 @@ namespace Hedgehog
         public static Matrix4 ToMatrix(this Position3D p)
         {
             return Matrix4.CreateTranslation(p.X, p.Y, p.Z);
+        }
+
+        public static Matrix4 GetViewMatrix(this Camera c, float aspectRatio)
+        {
+            return Matrix4.CreatePerspectiveFieldOfView(c.FieldOfView, aspectRatio, 1.0f, c.ViewDistance);
+        }
+
+        public static Matrix4 GetWorldMatrix(this Camera c)
+        {
+            return Matrix4.CreateTranslation(-c.Position.X, -c.Position.Y, -c.Position.Z) * c.Rotation.ToMatrix();
         }
 
         public static Color ToSystemColor(this Color3 c)

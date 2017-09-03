@@ -62,9 +62,9 @@ namespace Hedgehog.Graphic.OpenGL
                 offset += 1;
             }
 
-            StoreAttribute(0, positionData);
-            StoreAttribute(1, normalData);
-            StoreAttribute(2, textureData);
+            StoreAttribute(0, positionData, 3);
+            StoreAttribute(1, normalData, 3);
+            StoreAttribute(2, textureData, 2);
 
             SetIndexBuffer(index);
             VertexCount = vertex.Length;

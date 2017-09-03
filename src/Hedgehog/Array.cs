@@ -11,7 +11,6 @@
                 array[index + offset] = item;
                 offset += 1;
             }
-
         }
 
     }

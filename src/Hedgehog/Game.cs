@@ -57,5 +57,10 @@ namespace Hedgehog
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.ClearColor(clearColor.ToSystemColor());
         }
+
+        public float GetWindowAspectRatio()
+        {
+            return window.Height / (float)window.Width;
+        }
     }
 }
